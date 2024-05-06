@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
@@ -13,11 +14,16 @@ public class ShoppingCart {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany
-    @JoinColumn(name = "product_id")
-    private List<Product> products;
+    @OneToMany(mappedBy = "shoppingCart", cascade = CascadeType.ALL)
+    private List<Product> products = new ArrayList<>(); ;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id")
+    @OneToMany(mappedBy = "clients", cascade = CascadeType.ALL)
     private Client client;
+
+    public Product AddProducts(Product products) {
+        return products;
+    }
+    public Product RemoveProducts(Product products) {
+        return products;
+    }
 }
