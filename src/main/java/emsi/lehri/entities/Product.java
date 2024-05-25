@@ -17,4 +17,9 @@ public class Product {
     @ManyToOne
     @JoinColumn (name = "seller_id")
     private Seller seller;
+
+    @ManyToOne
+    @JoinColumn(name = "shopping_cart_id")
+    private ShoppingCart shoppingCart;
+
 }

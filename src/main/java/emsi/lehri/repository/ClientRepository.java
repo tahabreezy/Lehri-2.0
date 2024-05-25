@@ -4,5 +4,5 @@ import emsi.lehri.entities.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClientRepository extends JpaRepository<Client,Long> {
-    Client findClientsByUsername (String username );
+    Client findClientsByUsername (String client);
 }

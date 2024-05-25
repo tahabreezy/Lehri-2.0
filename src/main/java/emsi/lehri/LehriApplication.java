@@ -18,8 +18,8 @@ public class LehriApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) {
-        clientRepository.save(new Client(null,"Mohamad","moulhanouta@lehri.ma","0631313131","NoCredit00"));
+    public void run(String... args)throws Exception {
+
 
 
     }
